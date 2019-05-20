@@ -18,25 +18,7 @@
     <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="EventHandler.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="global.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="LoggingAccept.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="LoggingHandler.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Reactor.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ReactorImpl.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SelectReactorImpl.h">
+    <ClInclude Include="AsyncResult.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,25 +26,10 @@
     <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="EventHandler.cpp">
+    <ClCompile Include="mian.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="LoggingAccept.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LoggingHandler.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Reactor.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ReactorImpl.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectReactorImpl.cpp">
+    <ClCompile Include="AsyncResult.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

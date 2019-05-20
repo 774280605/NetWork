@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{FC0C0129-3F75-41F9-AF5B-F8AE90BA8292}</ProjectGuid>
+    <ProjectGuid>{0AB38C0B-6E75-4AC3-AE34-344AA92DE3A8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>NetWork</RootNamespace>
+    <RootNamespace>proactor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -151,29 +151,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="EventHandler.h" />
-    <ClInclude Include="global.h" />
-    <ClInclude Include="LoggingAccept.h" />
-    <ClInclude Include="LoggingHandler.h" />
+    <ClInclude Include="AsyncResult.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Reactor.h" />
-    <ClInclude Include="ReactorImpl.h" />
-    <ClInclude Include="SelectReactorImpl.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EventHandler.cpp" />
-    <ClCompile Include="LoggingAccept.cpp" />
-    <ClCompile Include="LoggingHandler.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="AsyncResult.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Reactor.cpp" />
-    <ClCompile Include="ReactorImpl.cpp" />
-    <ClCompile Include="SelectReactorImpl.cpp" />
+    <ClCompile Include="mian.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
