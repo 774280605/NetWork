@@ -5,6 +5,7 @@
 
 LoggingHandler::LoggingHandler(Reactor*reactor,int fd):reactor_(reactor),fd_(fd){
 	reactor_->register_handle(this, READ_EVENT);
+	stream_.setSocket(fd);
 	//reactor_->register_handle(this, WRITE_EVENT);
 }
 
@@ -26,8 +27,8 @@ void LoggingHandler::handleEvent(int fd, Event_Type type){
 
 void LoggingHandler::handleInput(int fd){
 	char szbuffer[1024] = { 0 };
-	recv(fd_, szbuffer, 1024, 0);
-	std::cout << szbuffer;
+	int bytes= stream_.read();
+	std::cout <<"收到字节"<< stream_.getLength();
 }
 
 void LoggingHandler::handleOutput(int fd){

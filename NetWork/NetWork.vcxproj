@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ByteBuffer.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="LoggingAccept.h" />
@@ -159,8 +160,10 @@
     <ClInclude Include="Reactor.h" />
     <ClInclude Include="ReactorImpl.h" />
     <ClInclude Include="SelectReactorImpl.h" />
+    <ClInclude Include="SockStream.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ByteBuffer.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="LoggingAccept.cpp" />
     <ClCompile Include="LoggingHandler.cpp" />
@@ -174,6 +177,7 @@
     <ClCompile Include="Reactor.cpp" />
     <ClCompile Include="ReactorImpl.cpp" />
     <ClCompile Include="SelectReactorImpl.cpp" />
+    <ClCompile Include="SockStream.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

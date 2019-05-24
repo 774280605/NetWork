@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include<WinSock2.h>
 #include<Windows.h>
 
 class AsyncResult:public OVERLAPPED
@@ -16,4 +17,9 @@ public:
 
 	void error(unsigned long);
 	unsigned long error();
+private:
+	unsigned long statue_;
+	unsigned long error_;
+
 };
+ 

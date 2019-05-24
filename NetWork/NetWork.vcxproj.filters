@@ -39,6 +39,12 @@
     <ClInclude Include="SelectReactorImpl.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="SockStream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ByteBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -63,6 +69,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SelectReactorImpl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SockStream.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ByteBuffer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
