@@ -23,25 +23,35 @@ void SelectReactorImpl::register_handle(EventHandler* handler, Event_Type type){
 }
 
 void SelectReactorImpl::register_handle(int fd, EventHandler* handler, Event_Type type){
-	FD_SET(fd, &readfds);
+	if (type == READ_EVENT){
+		FD_SET(fd, &readfds);
+	}else if (type == WRITE_EVENT){
+		FD_SET(fd, &writefds);
+	}
+	
 	table_[handler->getHandle()] = handler;
 }
 
 void SelectReactorImpl::remove_handle(EventHandler* handler, Event_Type type){
-
+	if (type==READ_EVENT){
+		FD_CLR(handler->getHandle(),&readfds);
+	}else if (type==WRITE_EVENT){
+		FD_CLR(handler->getHandle(), &writefds);
+	}
 }
 
 void SelectReactorImpl::remove_handle(int fd, Event_Type type){
 
-
+	if (type == READ_EVENT) {
+		FD_CLR(fd, &readfds);
+	}
+	else if (type == WRITE_EVENT) {
+		FD_CLR(fd, &writefds);
+	}
 }
 
 void SelectReactorImpl::handle_events(){
 	
-
-	
-
-
 	while (true){
 		int nfds = select(5, &readfds, &writefds, &exceptionfds,nullptr);
 

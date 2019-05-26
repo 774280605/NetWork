@@ -5,7 +5,7 @@
 #pragma comment(lib,"ws2_32.lib")
 #pragma warning(disable:4996)
 LoggingAccept::LoggingAccept(Reactor*reactor):reactor_(reactor){
-	this->setup();
+	this->open();
 	reactor_->register_handle(this,READ_EVENT);
 }
 
@@ -17,22 +17,15 @@ int LoggingAccept::getHandle(){
 }
 
 void LoggingAccept::handleEvent(int fd, Event_Type type){
-	if (type==READ_EVENT){
-		//todo accept 有连接事件
-		struct sockaddr_in sin;
-		int len = sizeof(sin);
-
-		unsigned int acceptfd= accept(fd_, (struct sockaddr*)&sin, &len);
-		send(acceptfd, "zhangxiaofei", 12, 0);
-
-	}
+	
 }
 
 void LoggingAccept::handleInput(int fd){
 	struct sockaddr_in sin;
 	int len = sizeof(sin);
-
+	unsigned long model = 1;
 	unsigned int acceptfd = accept(fd_, (struct sockaddr*)&sin, &len);
+	ioctlsocket(acceptfd, FIONBIO, &model);
 	auto tmpClient = new LoggingHandler(reactor_, acceptfd);
 
 }
@@ -46,7 +39,7 @@ void LoggingAccept::handleTimeout(int fd){
 void LoggingAccept::handleClose(int fd, Event_Type type){
 }
 
-void LoggingAccept::setup(){
+void LoggingAccept::open(){
 	WSADATA wsaData;
 	int iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
 	if (iResult != NO_ERROR) {	

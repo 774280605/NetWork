@@ -18,7 +18,7 @@ public:
 	void handleOutput(int fd) override;
 	void handleTimeout(int fd) override;
 	void handleClose(int fd, Event_Type type) override;
-	void setup();
+	void open();
 
 private:
 	uint32_t fd_;

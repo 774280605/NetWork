@@ -10,6 +10,7 @@ LoggingHandler::LoggingHandler(Reactor*reactor,int fd):reactor_(reactor),fd_(fd)
 }
 
 LoggingHandler::~LoggingHandler(){
+	reactor_->remove_handle(this, READ_EVENT);
 }
 
 int LoggingHandler::getHandle(){
@@ -17,22 +18,28 @@ int LoggingHandler::getHandle(){
 }
 
 void LoggingHandler::handleEvent(int fd, Event_Type type){
-	if (type== READ_EVENT){
-		//sock_stream_.recv();
-	}
-	else if(type==CLOSE_EVENT){
-		//sock_stream.close();
-	}
+	
 }
 
 void LoggingHandler::handleInput(int fd){
 	char szbuffer[1024] = { 0 };
 	int bytes= stream_.read();
-	std::cout <<"收到字节"<< stream_.getLength();
+	if (bytes<0){
+		int lasterror = GetLastError();
+		if (lasterror== WSAEWOULDBLOCK){
+			return;
+		}
+	}else if (bytes==0){
+		reactor_->remove_handle(this, READ_EVENT | WRITE_EVENT); 
+	}
+
+
+	std::cout <<"收到字节:"<< stream_.getLength();
+	
 }
 
 void LoggingHandler::handleOutput(int fd){
-	send(fd_, "zhangxiaofei11111", 18, 0);
+
 }
 
 void LoggingHandler::handleTimeout(int fd){

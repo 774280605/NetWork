@@ -1,14 +1,13 @@
 ﻿#pragma once
 #include<cstdint>
-class ByteBuffer
-{
+class ByteBuffer {
 public:
 	ByteBuffer();
 	virtual ~ByteBuffer();
 
-	int append(char*data,int len);
-	int remove(char*buffer,int len);
-	int read(int fd,int howmuch);
+	int append(char*data, int len);
+	int remove(char*buffer, int len);
+	int read(int fd, int howmuch);
 
 	int getLength();
 private:
