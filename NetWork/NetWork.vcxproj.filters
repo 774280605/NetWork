@@ -48,6 +48,12 @@
     <ClInclude Include="LFThreadPool.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LFSelectReactorImpl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LFEventHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -81,6 +87,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="LFThreadPool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LFSelectReactorImpl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LFEventHandler.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
