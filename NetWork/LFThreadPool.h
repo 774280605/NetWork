@@ -13,5 +13,7 @@ public:
 private:
 	std::mutex mutex_;
 	std::condition_variable conditionVariable_;
-	std::thread::native_handle_type threadId_;
+	std::thread::id leaderId_;
+
+	std::thread::id noCurrentId_;
 };

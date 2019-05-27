@@ -6,8 +6,13 @@ void LFThreadPool::join(){
 
 
 	for (;;){
-		while (true){
-			
+		while (leaderId_!=noCurrentId_){
+			conditionVariable_.wait(lock);
 		}
+
+		//dispatch
+
+		
+
 	}
 }
