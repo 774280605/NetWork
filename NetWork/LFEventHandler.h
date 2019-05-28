@@ -14,7 +14,10 @@ public:
 	void handleClose(int fd, Event_Type type) override;
 	int getHandle() override;
 	void handleEvent(int fd, Event_Type type) override;
+
+	void startUp();
 private:
 	LFThreadPool* lfThreadPool_;
 	EventHandler* concreteEventHandler_;
+	
 };

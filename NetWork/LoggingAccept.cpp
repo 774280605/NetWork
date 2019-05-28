@@ -6,7 +6,7 @@
 #pragma warning(disable:4996)
 LoggingAccept::LoggingAccept(Reactor*reactor):reactor_(reactor){
 	this->open();
-	reactor_->register_handle(this,READ_EVENT);
+	//reactor_->register_handle(this,READ_EVENT);
 }
 
 LoggingAccept::~LoggingAccept(){
@@ -26,7 +26,7 @@ void LoggingAccept::handleInput(int fd){
 	unsigned long model = 1;
 	unsigned int acceptfd = accept(fd_, (struct sockaddr*)&sin, &len);
 	ioctlsocket(acceptfd, FIONBIO, &model);
-	auto tmpClient = new LoggingHandler(reactor_, acceptfd);
+	//auto tmpClient = new LoggingHandler(reactor_, acceptfd);
 
 }
 

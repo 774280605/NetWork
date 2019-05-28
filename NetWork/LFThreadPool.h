@@ -4,7 +4,7 @@
 class LFThreadPool
 {
 public:
-	LFThreadPool();
+	LFThreadPool(Reactor*reactor);
 	virtual ~LFThreadPool();
 
 	void join();

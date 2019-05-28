@@ -1,10 +1,10 @@
 ﻿#include "pch.h"
 #include "LFEventHandler.h"
-
+#include <WinSock2.h>
 LFEventHandler::LFEventHandler(LFThreadPool* lfThreadPool, EventHandler* eventHandler):lfThreadPool_(lfThreadPool),
 concreteEventHandler_(eventHandler)
-
 {
+
 }
 
 LFEventHandler::~LFEventHandler(){
@@ -32,4 +32,8 @@ int LFEventHandler::getHandle(){
 }
 
 void LFEventHandler::handleEvent(int fd, Event_Type type){
+}
+
+void LFEventHandler::startUp(){
+	
 }

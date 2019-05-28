@@ -1,7 +1,9 @@
 ﻿#include "pch.h"
 #include "LFThreadPool.h"
 
-LFThreadPool::LFThreadPool(){
+LFThreadPool::LFThreadPool(Reactor*reactor)
+	:reactor_(reactor)
+{
 }
 
 LFThreadPool::~LFThreadPool(){
