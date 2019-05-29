@@ -155,6 +155,7 @@
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="LFEventHandler.h" />
+    <ClInclude Include="LFLoggingHandler.h" />
     <ClInclude Include="LFSelectReactorImpl.h" />
     <ClInclude Include="LFThreadPool.h" />
     <ClInclude Include="LoggingAccept.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="ByteBuffer.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="LFEventHandler.cpp" />
+    <ClCompile Include="LFLoggingHandler.cpp" />
     <ClCompile Include="LFSelectReactorImpl.cpp" />
     <ClCompile Include="LFThreadPool.cpp" />
     <ClCompile Include="LoggingAccept.cpp" />

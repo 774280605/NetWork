@@ -1,12 +1,12 @@
 ﻿#pragma once
-#include "EventHandler.h"
-#include "LFThreadPool.h"
+#include"EventHandler.h"
 #include"Reactor.h"
-class LFEventHandler:public EventHandler
+#include"LFThreadPool.h"
+class LFLoggingHandler:public EventHandler
 {
 public:
-	LFEventHandler(Reactor*reactor,LFThreadPool*lfThreadPool,EventHandler*eventHandler);
-	virtual  ~LFEventHandler();
+	LFLoggingHandler(Reactor*reactor,LFThreadPool*lfThreadPool,EventHandler*handler);
+	virtual ~LFLoggingHandler();
 
 
 	void handleInput(int fd) override;
@@ -16,10 +16,9 @@ public:
 	int getHandle() override;
 	void handleEvent(int fd, Event_Type type) override;
 
-	void startUp();
+
 private:
-	LFThreadPool* lfThreadPool_;
-	Reactor* reactor_;
+	Reactor*reactor_;
+	LFThreadPool*lfThreadPool_;
 	EventHandler* concreteEventHandler_;
-	
 };

@@ -1,10 +1,10 @@
 ﻿#include "pch.h"
 #include "Reactor.h"
 #include "SelectReactorImpl.h"
-
+#include "LFSelectReactorImpl.h"
 
 Reactor::Reactor(){
-	impl_ = new SelectReactorImpl();
+	impl_ = new LFSelectReactorImpl();
 }
 
 Reactor::~Reactor(){

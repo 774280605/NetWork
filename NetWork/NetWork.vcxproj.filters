@@ -57,6 +57,9 @@
     <ClInclude Include="ThreadManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LFLoggingHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -99,6 +102,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ThreadManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LFLoggingHandler.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

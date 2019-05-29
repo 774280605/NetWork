@@ -19,7 +19,7 @@ namespace UnitTest1
 			LoggingAccept accept(reactor);
 			
 			ThreadManager threadManager(reactor);
-			LFEventHandler lfEventHandler(threadManager.getThreadPool(), &accept);
+			LFEventHandler lfEventHandler(reactor,threadManager.getThreadPool(), &accept);
 			threadManager.startup();
 
 		}

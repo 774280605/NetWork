@@ -1,10 +1,11 @@
 ﻿#include "pch.h"
 #include "LFEventHandler.h"
 #include <WinSock2.h>
-LFEventHandler::LFEventHandler(LFThreadPool* lfThreadPool, EventHandler* eventHandler):lfThreadPool_(lfThreadPool),
-concreteEventHandler_(eventHandler)
+LFEventHandler::LFEventHandler(Reactor*reactor,LFThreadPool* lfThreadPool, EventHandler* eventHandler):lfThreadPool_(lfThreadPool),
+concreteEventHandler_(eventHandler),
+reactor_(reactor)
 {
-
+	reactor_->register_handle(this,READ_EVENT);
 }
 
 LFEventHandler::~LFEventHandler(){

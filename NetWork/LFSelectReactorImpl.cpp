@@ -52,7 +52,7 @@ void LFSelectReactorImpl::remove_handle(int fd, Event_Type type){
 
 void LFSelectReactorImpl::handle_events(){
 	int nfds = select(5, &readfds, &writefds, &exceptionfds, nullptr);
-
+	int error = GetLastError();
 	if (nfds > 0) {
 		for (auto element : table_) {
 			if (FD_ISSET(element.first, &readfds)) {
