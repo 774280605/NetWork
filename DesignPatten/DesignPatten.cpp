@@ -7,16 +7,23 @@
 
 #include "RefineAbstraction.h"
 #include "ConcreteImplementor.h"
+#include "Invoker.h"
+#include "ConcreteCommand.h"
 void testBridge() {
 	std::cout << "bridge test" << std::endl;
 	Abstraction* abstraction = new RefineAbstraction(new ConcreteImplementor());
 	abstraction->show();
 }
 
+void testCommand() {
+	Invoker* invoker = new Invoker(new ConcreteCommand(new Receiver));
+	invoker->show();
+}
+
 int main()
 {
-	
-	testBridge();
+	testCommand();
+	//testBridge();
 	return 0;
 }
 

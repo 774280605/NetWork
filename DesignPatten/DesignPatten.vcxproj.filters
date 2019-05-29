@@ -19,6 +19,9 @@
     <Filter Include="bridge">
       <UniqueIdentifier>{67166164-5dd3-41ed-b691-3db3459441cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="command">
+      <UniqueIdentifier>{a957d139-a611-4b2f-9678-43395865ab83}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -38,6 +41,18 @@
     </ClInclude>
     <ClInclude Include="ConcreteImplementor.h">
       <Filter>bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcreteCommand.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Receiver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Invoker.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +76,18 @@
     </ClCompile>
     <ClCompile Include="ConcreteImplementor.cpp">
       <Filter>bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcreteCommand.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Receiver.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Invoker.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
