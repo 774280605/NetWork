@@ -2,6 +2,7 @@
 #include "LoggingAccept.h"
 #include <WinSock2.h>
 #include "LoggingHandler.h"
+#include "LFLoggingHandler.h"
 #pragma comment(lib,"ws2_32.lib")
 #pragma warning(disable:4996)
 LoggingAccept::LoggingAccept(Reactor*reactor):reactor_(reactor){
@@ -20,14 +21,14 @@ void LoggingAccept::handleEvent(int fd, Event_Type type){
 	
 }
 
-void LoggingAccept::handleInput(int fd){
+int LoggingAccept::handleInput(int fd){
 	struct sockaddr_in sin;
 	int len = sizeof(sin);
 	unsigned long model = 1;
 	unsigned int acceptfd = accept(fd_, (struct sockaddr*)&sin, &len);
 	ioctlsocket(acceptfd, FIONBIO, &model);
 	//auto tmpClient = new LoggingHandler(reactor_, acceptfd);
-
+	return acceptfd;
 }
 
 void LoggingAccept::handleOutput(int fd){

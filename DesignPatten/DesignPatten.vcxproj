@@ -156,22 +156,29 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="ConcreteCommand.h" />
     <ClInclude Include="ConcreteImplementor.h" />
+    <ClInclude Include="ConcreteObserver.h" />
+    <ClInclude Include="ConcreteSubject.h" />
     <ClInclude Include="Implementor.h" />
     <ClInclude Include="Invoker.h" />
     <ClInclude Include="MutiThreadDebug.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Receiver.h" />
     <ClInclude Include="RefineAbstraction.h" />
+    <ClInclude Include="Subject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Abstraction.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="ConcreteCommand.cpp" />
     <ClCompile Include="ConcreteImplementor.cpp" />
+    <ClCompile Include="ConcreteObserver.cpp" />
+    <ClCompile Include="ConcreteSubject.cpp" />
     <ClCompile Include="DesignPatten.cpp" />
     <ClCompile Include="Implementor.cpp" />
     <ClCompile Include="Invoker.cpp" />
     <ClCompile Include="MutiThreadDebug.cpp" />
+    <ClCompile Include="Observer.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -180,6 +187,7 @@
     </ClCompile>
     <ClCompile Include="Receiver.cpp" />
     <ClCompile Include="RefineAbstraction.cpp" />
+    <ClCompile Include="Subject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

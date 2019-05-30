@@ -1,8 +1,8 @@
 ﻿#include "pch.h"
 #include "LFSelectReactorImpl.h"
 
-LFSelectReactorImpl::LFSelectReactorImpl(){
-	FD_ZERO(&readfds);
+LFSelectReactorImpl::LFSelectReactorImpl(){	
+	FD_ZERO(&readfds);	
 	FD_ZERO(&writefds);
 	FD_ZERO(&exceptionfds);
 }

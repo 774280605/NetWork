@@ -14,7 +14,7 @@ public:
 	void handleEvent(int fd, Event_Type type) override;
 
 
-	void handleInput(int fd) override;
+	int handleInput(int fd) override;
 	void handleOutput(int fd) override;
 	void handleTimeout(int fd) override;
 	void handleClose(int fd, Event_Type type) override;

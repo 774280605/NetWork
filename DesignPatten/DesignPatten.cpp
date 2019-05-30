@@ -19,11 +19,24 @@ void testCommand() {
 	Invoker* invoker = new Invoker(new ConcreteCommand(new Receiver));
 	invoker->show();
 }
+#include "ConcreteSubject.h"
+#include"ConcreteObserver.h"
+void testObserver(){
+	Subject* subject = new ConcreteSubject();
+	for (int i=0;i<10;++i){
+		subject->attach(new ConcreteObserver(subject));
+	}
+
+	subject->notify();
+}
 
 int main()
 {
-	testCommand();
+	//testCommand();
 	//testBridge();
+
+	testObserver();
+
 	return 0;
 }
 

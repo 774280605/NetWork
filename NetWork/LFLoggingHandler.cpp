@@ -6,14 +6,21 @@ lfThreadPool_(lfThreadPool),
 reactor_(reactor),
 concreteEventHandler_(handler)
 {
+	reactor_->register_handle(this, concreteEventHandler_->getHandle());
 }
 
 LFLoggingHandler::~LFLoggingHandler(){
 }
 
-void LFLoggingHandler::handleInput(int fd){
+int LFLoggingHandler::handleInput(int fd){
 
+	lfThreadPool_->deactivate(fd, READ_EVENT);
 
+	lfThreadPool_->promote_new_leader();
+	concreteEventHandler_->handleInput(fd);
+	lfThreadPool_->reactivate(fd, READ_EVENT);
+
+	return 0;
 }
 
 void LFLoggingHandler::handleOutput(int fd){

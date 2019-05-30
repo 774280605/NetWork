@@ -22,6 +22,9 @@
     <Filter Include="command">
       <UniqueIdentifier>{a957d139-a611-4b2f-9678-43395865ab83}</UniqueIdentifier>
     </Filter>
+    <Filter Include="observer">
+      <UniqueIdentifier>{b0770ef3-f394-4148-ad59-763decb3f0e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -53,6 +56,18 @@
     </ClInclude>
     <ClInclude Include="Invoker.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.h">
+      <Filter>observer</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcreteSubject.h">
+      <Filter>observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>observer</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcreteObserver.h">
+      <Filter>observer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +103,18 @@
     </ClCompile>
     <ClCompile Include="Invoker.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Subject.cpp">
+      <Filter>observer</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcreteSubject.cpp">
+      <Filter>observer</Filter>
+    </ClCompile>
+    <ClCompile Include="Observer.cpp">
+      <Filter>observer</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcreteObserver.cpp">
+      <Filter>observer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

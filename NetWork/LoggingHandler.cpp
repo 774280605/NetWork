@@ -21,13 +21,13 @@ void LoggingHandler::handleEvent(int fd, Event_Type type){
 	
 }
 
-void LoggingHandler::handleInput(int fd){
+int LoggingHandler::handleInput(int fd){
 	char szbuffer[1024] = { 0 };
 	int bytes= stream_.read();
 	if (bytes<0){
 		int lasterror = GetLastError();
 		if (lasterror== WSAEWOULDBLOCK){
-			return;
+			return bytes;
 		}
 	}else if (bytes==0){
 		reactor_->remove_handle(this, READ_EVENT | WRITE_EVENT); 
@@ -35,7 +35,7 @@ void LoggingHandler::handleInput(int fd){
 
 
 	std::cout <<"收到字节:"<< stream_.getLength();
-	
+	return bytes;
 }
 
 void LoggingHandler::handleOutput(int fd){
