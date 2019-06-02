@@ -9,6 +9,7 @@ ConcreteObserver::ConcreteObserver(Subject* subject){
 }
 
 ConcreteObserver::~ConcreteObserver(){
+
 }
 
 void ConcreteObserver::update(){

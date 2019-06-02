@@ -46,5 +46,5 @@ void LFThreadPool::deactivate(int fd, Event_Type type){
 }
 
 void LFThreadPool::reactivate(int fd, Event_Type type){
-	//reactor_->register_handle(fd, type);
+	reactor_->register_handle(fd, type);
 }

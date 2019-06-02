@@ -10,7 +10,7 @@ public:
 
 
 	void register_handle(EventHandler* handler, Event_Type type) override;
-	void register_handle(int fd, EventHandler* handler, Event_Type type) override;
+	void register_handle(int fd, Event_Type type) override;
 	void remove_handle(EventHandler* handler, Event_Type type) override;
 	void remove_handle(int fd, Event_Type type) override;
 

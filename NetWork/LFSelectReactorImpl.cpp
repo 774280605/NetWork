@@ -2,7 +2,7 @@
 #include "LFSelectReactorImpl.h"
 
 LFSelectReactorImpl::LFSelectReactorImpl(){	
-	FD_ZERO(&readfds);	
+	FD_ZERO(&readfds);
 	FD_ZERO(&writefds);
 	FD_ZERO(&exceptionfds);
 }
@@ -21,7 +21,7 @@ void LFSelectReactorImpl::register_handle(EventHandler* handler, Event_Type type
 	}
 }
 
-void LFSelectReactorImpl::register_handle(int fd, EventHandler* handler, Event_Type type){
+void LFSelectReactorImpl::register_handle(int fd, Event_Type type){
 	if (type == READ_EVENT) {
 		FD_SET(fd, &readfds);
 	}
@@ -29,12 +29,13 @@ void LFSelectReactorImpl::register_handle(int fd, EventHandler* handler, Event_T
 		FD_SET(fd, &writefds);
 	}
 
-	table_[handler->getHandle()] = handler;
+	//table_[handler->getHandle()] = handler;
 }
 
 void LFSelectReactorImpl::remove_handle(EventHandler* handler, Event_Type type){
 	if (type == READ_EVENT) {
 		FD_CLR(handler->getHandle(), &readfds);
+		
 	}
 	else if (type == WRITE_EVENT) {
 		FD_CLR(handler->getHandle(), &writefds);
@@ -44,14 +45,21 @@ void LFSelectReactorImpl::remove_handle(EventHandler* handler, Event_Type type){
 void LFSelectReactorImpl::remove_handle(int fd, Event_Type type){
 	if (type == READ_EVENT) {
 		FD_CLR(fd, &readfds);
+
 	}
 	else if (type == WRITE_EVENT) {
 		FD_CLR(fd, &writefds);
+
 	}
 }
-
+///有故事的人
 void LFSelectReactorImpl::handle_events(){
-	int nfds = select(5, &readfds, &writefds, &exceptionfds, nullptr);
+
+	
+
+
+
+	int nfds = select(0, &readfds, &writefds, &exceptionfds, nullptr);
 	int error = GetLastError();
 	if (nfds > 0) {
 		for (auto element : table_) {

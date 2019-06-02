@@ -15,10 +15,12 @@ LFEventHandler::~LFEventHandler(){
 
 int LFEventHandler::handleInput(int fd){
 	lfThreadPool_->deactivate(fd, READ_EVENT);
-	lfThreadPool_->promote_new_leader();
+	
 	int accept =  concreteEventHandler_->handleInput(fd);
 	auto concreteHandler = new LoggingHandler(reactor_,accept);
 	auto lfHandler = new LFLoggingHandler(reactor_,lfThreadPool_,concreteHandler);
+	lfThreadPool_->promote_new_leader();
+	
 
 	lfThreadPool_->reactivate(fd, READ_EVENT);
 	return 0;

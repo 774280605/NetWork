@@ -14,8 +14,8 @@ void Reactor::register_handle(EventHandler* handler, Event_Type type){
 	impl_->register_handle(handler, type);
 }
 
-void Reactor::register_handle(int fd, EventHandler* handler, Event_Type type){
-	impl_->register_handle(fd, handler, type);
+void Reactor::register_handle(int fd, Event_Type type){
+	impl_->register_handle(fd, type);
 }
 
 void Reactor::remove_handle(EventHandler* handler, Event_Type type){

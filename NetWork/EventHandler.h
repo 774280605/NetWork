@@ -11,5 +11,5 @@ public:
 	virtual int getHandle()=0;
 	virtual void handleEvent(int fd,Event_Type type)=0;
 
-protected:
+
 };

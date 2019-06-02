@@ -6,7 +6,7 @@ lfThreadPool_(lfThreadPool),
 reactor_(reactor),
 concreteEventHandler_(handler)
 {
-	reactor_->register_handle(this, concreteEventHandler_->getHandle());
+	reactor_->register_handle(this, READ_EVENT);
 }
 
 LFLoggingHandler::~LFLoggingHandler(){

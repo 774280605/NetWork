@@ -12,7 +12,7 @@ public:
 	
 
 	virtual void register_handle(EventHandler*handler, Event_Type type) = 0;
-	virtual void register_handle(int fd, EventHandler*handler, Event_Type type) = 0;
+	virtual void register_handle(int fd, Event_Type type) = 0;
 
 	virtual void remove_handle(EventHandler*handler, Event_Type type) = 0;
 	virtual void remove_handle(int fd, Event_Type type) = 0;

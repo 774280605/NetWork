@@ -9,7 +9,7 @@ public:
 	virtual ~Reactor();
 
 	void register_handle(EventHandler*handler,Event_Type type);
-	void register_handle(int fd, EventHandler*handler, Event_Type type);
+	void register_handle(int fd, Event_Type type);
 
 	void remove_handle(EventHandler*handler, Event_Type type);
 	void remove_handle(int fd, Event_Type type);

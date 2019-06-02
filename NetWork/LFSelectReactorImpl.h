@@ -11,7 +11,7 @@ public:
 
 
 	void register_handle(EventHandler* handler, Event_Type type) override;
-	void register_handle(int fd, EventHandler* handler, Event_Type type) override;
+	void register_handle(int fd, Event_Type type) override;
 	void remove_handle(EventHandler* handler, Event_Type type) override;
 	void remove_handle(int fd, Event_Type type) override;
 	void handle_events() override;
@@ -19,5 +19,10 @@ public:
 
 private:
 	std::map< uint32_t, EventHandler* > table_;
-	fd_set readfds, writefds, exceptionfds;
+	fd_set readfds;
+	fd_set writefds;
+	fd_set exceptionfds;
+
+	
+
 };
