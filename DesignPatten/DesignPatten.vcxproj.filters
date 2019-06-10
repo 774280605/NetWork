@@ -25,6 +25,9 @@
     <Filter Include="observer">
       <UniqueIdentifier>{b0770ef3-f394-4148-ad59-763decb3f0e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="visitor">
+      <UniqueIdentifier>{649ce3dc-f16a-4fce-a835-18932f7266b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
