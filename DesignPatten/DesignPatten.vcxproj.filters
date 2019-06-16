@@ -72,6 +72,18 @@
     <ClInclude Include="ConcreteObserver.h">
       <Filter>observer</Filter>
     </ClInclude>
+    <ClInclude Include="Visitor.h">
+      <Filter>visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="Element.h">
+      <Filter>visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcreteElement.h">
+      <Filter>visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcreteVisitor.h">
+      <Filter>visitor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -118,6 +130,18 @@
     </ClCompile>
     <ClCompile Include="ConcreteObserver.cpp">
       <Filter>observer</Filter>
+    </ClCompile>
+    <ClCompile Include="Visitor.cpp">
+      <Filter>visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="Element.cpp">
+      <Filter>visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcreteElement.cpp">
+      <Filter>visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcreteVisitor.cpp">
+      <Filter>visitor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

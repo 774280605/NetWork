@@ -155,9 +155,12 @@
     <ClInclude Include="Abstraction.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="ConcreteCommand.h" />
+    <ClInclude Include="ConcreteElement.h" />
     <ClInclude Include="ConcreteImplementor.h" />
     <ClInclude Include="ConcreteObserver.h" />
     <ClInclude Include="ConcreteSubject.h" />
+    <ClInclude Include="ConcreteVisitor.h" />
+    <ClInclude Include="Element.h" />
     <ClInclude Include="Implementor.h" />
     <ClInclude Include="Invoker.h" />
     <ClInclude Include="MutiThreadDebug.h" />
@@ -166,15 +169,19 @@
     <ClInclude Include="Receiver.h" />
     <ClInclude Include="RefineAbstraction.h" />
     <ClInclude Include="Subject.h" />
+    <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Abstraction.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="ConcreteCommand.cpp" />
+    <ClCompile Include="ConcreteElement.cpp" />
     <ClCompile Include="ConcreteImplementor.cpp" />
     <ClCompile Include="ConcreteObserver.cpp" />
     <ClCompile Include="ConcreteSubject.cpp" />
+    <ClCompile Include="ConcreteVisitor.cpp" />
     <ClCompile Include="DesignPatten.cpp" />
+    <ClCompile Include="Element.cpp" />
     <ClCompile Include="Implementor.cpp" />
     <ClCompile Include="Invoker.cpp" />
     <ClCompile Include="MutiThreadDebug.cpp" />
@@ -188,6 +195,7 @@
     <ClCompile Include="Receiver.cpp" />
     <ClCompile Include="RefineAbstraction.cpp" />
     <ClCompile Include="Subject.cpp" />
+    <ClCompile Include="Visitor.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

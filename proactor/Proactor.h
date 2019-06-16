@@ -1,5 +1,5 @@
 ﻿#pragma once
-
+#include <Windows.h>
 class Proactor
 {
 public:
@@ -11,4 +11,7 @@ public:
 
 
 
+
+private:
+	HANDLE completionPort_{INVALID_HANDLE_VALUE};
 };

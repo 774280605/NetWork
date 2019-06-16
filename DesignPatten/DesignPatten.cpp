@@ -9,6 +9,8 @@
 #include "ConcreteImplementor.h"
 #include "Invoker.h"
 #include "ConcreteCommand.h"
+#include "ConcreteElement.h"
+#include "ConcreteVisitor.h"
 void testBridge() {
 	std::cout << "bridge test" << std::endl;
 	Abstraction* abstraction = new RefineAbstraction(new ConcreteImplementor());
@@ -30,12 +32,21 @@ void testObserver(){
 	subject->notify();
 }
 
+
+void testVisitor(){
+	Element*element = new ConcreteElement();
+	Visitor*visitor = new ConcreteVisitor();
+	element->accept(visitor);
+	visitor->visit(element);
+}
+
 int main()
 {
 	//testCommand();
 	//testBridge();
 
-	testObserver();
+	//testObserver();
+	testVisitor();
 
 	return 0;
 }
