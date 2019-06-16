@@ -20,6 +20,7 @@ public:
 private:
 	unsigned long statue_;
 	unsigned long error_;
+	unsigned long bytesTransferred_;
 
 };
  

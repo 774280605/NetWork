@@ -7,25 +7,27 @@ AsyncResult::AsyncResult(){
 AsyncResult::~AsyncResult(){
 }
 
-void AsyncResult::bytesTransferred(unsigned long){
-	
+void AsyncResult::bytesTransferred(unsigned long bytes){
+	this->bytesTransferred_ = bytes;
 }
 
 unsigned long AsyncResult::bytesTransferred(){
-	return 0;
+	return this->bytesTransferred_;
 }
 
 unsigned long AsyncResult::statue(){
-	return 0;
+	return this->statue_;
 }
 
-void AsyncResult::statue(unsigned long){
+void AsyncResult::statue(unsigned long statue){
+	this->statue_ = statue;
 }
 
-void AsyncResult::error(unsigned long){
+void AsyncResult::error(unsigned long error){
+	this->error_ = error;
 }
 
 unsigned long AsyncResult::error(){
 
-	return 0;
+	return this->error_;
 }
