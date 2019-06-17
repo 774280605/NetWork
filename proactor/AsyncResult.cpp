@@ -15,11 +15,11 @@ unsigned long AsyncResult::bytesTransferred(){
 	return this->bytesTransferred_;
 }
 
-unsigned long AsyncResult::statue(){
+bool AsyncResult::statue(){
 	return this->statue_;
 }
 
-void AsyncResult::statue(unsigned long statue){
+void AsyncResult::statue(bool statue){
 	this->statue_ = statue;
 }
 

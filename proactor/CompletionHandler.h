@@ -5,13 +5,13 @@
 class CompletionHandler
 {
 public:
-	CompletionHandler();
+	CompletionHandler(Proactor*proactor);
 	virtual ~CompletionHandler();
-	virtual void handle_read(int fd, const AsyncResult&result)=0;
-	virtual void handle_write(int fd, const AsyncResult&result) = 0;
-	virtual void handle_accept(int fd, const AsyncResult&result) = 0;
-	virtual int get_handle()=0;
+	virtual void handle_read(uintmax_t fd, const AsyncResult&result)=0;
+	virtual void handle_write(uintmax_t fd, const AsyncResult&result) = 0;
+	virtual void handle_accept(uintmax_t fd, const AsyncResult&result) = 0;
+	virtual uintmax_t get_handle() =0;
 
-private:
+protected:
 	Proactor*proactor_;
 };

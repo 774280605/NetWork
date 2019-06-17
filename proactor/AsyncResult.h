@@ -12,13 +12,13 @@ public:
 	void bytesTransferred(unsigned long);
 	unsigned long bytesTransferred();
 
-	unsigned long statue();
-	void statue(unsigned long);
+	bool statue();
+	void statue(bool statue);
 
 	void error(unsigned long);
 	unsigned long error();
 private:
-	unsigned long statue_;
+	bool statue_;
 	unsigned long error_;
 	unsigned long bytesTransferred_;
 

@@ -1,7 +1,14 @@
 ﻿#include "pch.h"
 #include "AsyncStreamReadResult.h"
 
+AsyncStreamReadResult::AsyncStreamReadResult(CompletionHandler* handler):handler_(handler){
+
+}
+
+AsyncStreamReadResult::~AsyncStreamReadResult(){
+}
+
 void AsyncStreamReadResult::complete(){
 	   
-	handler->handle_read(handler->get_handle(), *this);
+	handler_->handle_read(handler_->get_handle(), *this);
 }

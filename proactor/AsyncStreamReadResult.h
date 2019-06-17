@@ -4,10 +4,10 @@
 class AsyncStreamReadResult:public AsyncResult
 {
 public:
-	AsyncStreamReadResult();
+	AsyncStreamReadResult(CompletionHandler*handler);
 	virtual ~AsyncStreamReadResult();
 	virtual void complete()override;
 
 private:
-	CompletionHandler*handler;
+	CompletionHandler*handler_;
 };
