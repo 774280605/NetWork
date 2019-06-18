@@ -38,7 +38,8 @@ void Acceptor::setup(){
 	unsigned long blockiing = 1;
 	ioctlsocket(accept_, FIONBIO, &blockiing);
 
-	
+	asyncStream_->open(accept_, this, proactor_);
+
 
 
 	sockaddr_in service{};
@@ -55,7 +56,6 @@ void Acceptor::setup(){
 		closesocket(accept_);
 		WSACleanup();
 	}
-	asyncStream_->open(accept_, this, proactor_);
 	asyncStream_->async_read(buffer,1024);
 
 }

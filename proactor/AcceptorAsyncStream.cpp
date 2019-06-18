@@ -32,7 +32,7 @@ void AcceptorAsyncStream::async_read(void* buffer, unsigned long bytes){
 	unsigned long blocking = 1;
 	ioctlsocket(accept, FIONBIO, &blocking);
 	OVERLAPPED* overlapped = new AsyncStreamAcceptResult(completionHandler_);
-	bool ret= lpfnAcceptEx(fd_, accept, buffer, bytes,
+	bool ret= lpfnAcceptEx(fd_, accept, buffer, 0,
 		sizeof(sockaddr_in) + 16, sizeof(sockaddr_in) + 16, &transferbytes,overlapped);
 	if (ret==false){
 		int errCode = WSAGetLastError();
