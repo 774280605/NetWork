@@ -152,8 +152,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Acceptor.h" />
+    <ClInclude Include="AcceptorAsyncStream.h" />
     <ClInclude Include="AsyncResult.h" />
     <ClInclude Include="AsyncStream.h" />
+    <ClInclude Include="AsyncStreamAcceptResult.h" />
+    <ClInclude Include="AsyncStreamBase.h" />
     <ClInclude Include="AsyncStreamReadResult.h" />
     <ClInclude Include="CompletionHandler.h" />
     <ClInclude Include="global.h" />
@@ -162,8 +165,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Acceptor.cpp" />
+    <ClCompile Include="AcceptorAsyncStream.cpp" />
     <ClCompile Include="AsyncResult.cpp" />
     <ClCompile Include="AsyncStream.cpp" />
+    <ClCompile Include="AsyncStreamAcceptResult.cpp" />
+    <ClCompile Include="AsyncStreamBase.cpp" />
     <ClCompile Include="AsyncStreamReadResult.cpp" />
     <ClCompile Include="CompletionHandler.cpp" />
     <ClCompile Include="pch.cpp">

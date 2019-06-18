@@ -1,5 +1,6 @@
 ﻿#include "pch.h"
 #include "Acceptor.h"
+#include "AcceptorAsyncStream.h"
 
 Acceptor::Acceptor(Proactor* proactor):CompletionHandler(proactor){
 }
@@ -22,7 +23,7 @@ uintmax_t Acceptor::get_handle(){
 }
 
 void Acceptor::setup(){
-	asyncStream_ = new AsyncStream();
+	asyncStream_ = new AcceptorAsyncStream();
 
 	WSADATA wsaData;
 	int iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
@@ -30,14 +31,14 @@ void Acceptor::setup(){
 
 	}
 
-	accept_ = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	accept_ = socket(AF_INET, SOCK_STREAM, 0);
 	if (accept_ == INVALID_SOCKET) {
 		WSACleanup();
 	}
-	unsigned long blockiing = 0;
+	unsigned long blockiing = 1;
 	ioctlsocket(accept_, FIONBIO, &blockiing);
 
-	asyncStream_->open(accept_, this, proactor_);
+	
 
 
 	sockaddr_in service{};
@@ -54,11 +55,7 @@ void Acceptor::setup(){
 		closesocket(accept_);
 		WSACleanup();
 	}
-
-
-
-	//AcceptEx(accept_,)
-
-	
+	asyncStream_->open(accept_, this, proactor_);
+	asyncStream_->async_read(buffer,1024);
 
 }

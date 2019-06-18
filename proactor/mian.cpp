@@ -3,8 +3,13 @@
 
 #include "pch.h"
 #include <iostream>
-
+#include "Acceptor.h"
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	Proactor* proactor = new Proactor;
+	Acceptor* acceptor = new Acceptor(proactor);
+	acceptor->setup();
+	while (true){
+		proactor->handle_events();
+	}
 }

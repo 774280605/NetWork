@@ -39,6 +39,15 @@
     <ClInclude Include="Acceptor.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="AsyncStreamBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AcceptorAsyncStream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AsyncStreamAcceptResult.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -63,6 +72,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Acceptor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AsyncStreamBase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AcceptorAsyncStream.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AsyncStreamAcceptResult.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

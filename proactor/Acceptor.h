@@ -17,6 +17,7 @@ public:
 
 	void setup();
 private:
-	SOCKET accept_;
-	AsyncStream* asyncStream_;
+	SOCKET accept_{0};
+	AsyncStreamBase* asyncStream_{nullptr};
+	char buffer[1024]{0};
 };

@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AsyncStreamBase.h" />
     <ClInclude Include="ByteBuffer.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="global.h" />
@@ -168,6 +169,7 @@
     <ClInclude Include="ThreadManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AsyncStreamBase.cpp" />
     <ClCompile Include="ByteBuffer.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="LFEventHandler.cpp" />

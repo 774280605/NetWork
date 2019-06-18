@@ -25,10 +25,13 @@ void AsyncStream::async_read(void* buffer, unsigned long bytes){
 	wsabuf.len = bytes;
 	OVERLAPPED* act = new AsyncStreamReadResult(handler);
 	int result= WSARecv(fd_, &wsabuf,1,&tranferBytes,&flags,act,nullptr);
-	if (result){
+	if (result<0){
 		int errCode = WSAGetLastError();
 		if (errCode!= WSA_IO_PENDING){
 			return;
+		}
+		else{
+			int index = errCode;
 		}
 	}
 	return;
