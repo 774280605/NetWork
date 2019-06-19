@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 #include "Acceptor.h"
 #include "AcceptorAsyncStream.h"
+#include "Session.h"
 
 Acceptor::Acceptor(Proactor* proactor):CompletionHandler(proactor){
 }
@@ -9,13 +10,15 @@ Acceptor::~Acceptor(){
 }
 
 void Acceptor::handle_read(uintmax_t fd, const AsyncResult& result){
-
+	
 }
 
 void Acceptor::handle_write(uintmax_t fd, const AsyncResult& result){
 }
 
 void Acceptor::handle_accept(uintmax_t fd, const AsyncResult& result){
+	auto session = new Session(clientfd_, proactor_);
+	asyncStream_->async_read(&clientfd_, sizeof(uintmax_t));
 }
 
 uintmax_t Acceptor::get_handle(){
@@ -56,6 +59,7 @@ void Acceptor::setup(){
 		closesocket(accept_);
 		WSACleanup();
 	}
-	asyncStream_->async_read(buffer,1024);
+
+	asyncStream_->async_read(&clientfd_,sizeof(uintmax_t));
 
 }

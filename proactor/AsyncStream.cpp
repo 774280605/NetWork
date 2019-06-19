@@ -14,6 +14,7 @@ void AsyncStream::open(uintmax_t fd, CompletionHandler* handler, Proactor* proac
 	this->handler = handler;
 	this->proactor_ = proactor;
 	this->proactor_->register_handle(fd);
+	
 }
 
 void AsyncStream::async_read(void* buffer, unsigned long bytes){

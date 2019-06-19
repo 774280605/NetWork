@@ -162,6 +162,7 @@
     <ClInclude Include="global.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Proactor.h" />
+    <ClInclude Include="Session.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Acceptor.cpp" />
@@ -180,6 +181,7 @@
     </ClCompile>
     <ClCompile Include="mian.cpp" />
     <ClCompile Include="Proactor.cpp" />
+    <ClCompile Include="Session.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -16,10 +16,8 @@ void AcceptorAsyncStream::open(uintmax_t fd, CompletionHandler* handler, Proacto
 	this->proactor_ = proactor;
 	this->proactor_->register_handle(fd);
 	DWORD dwBytes = 0;
-	auto  iResult = WSAIoctl(fd, SIO_GET_EXTENSION_FUNCTION_POINTER,
-		&GuidAcceptEx, sizeof(GuidAcceptEx),
-		&lpfnAcceptEx, sizeof(lpfnAcceptEx),
-		&dwBytes, NULL, NULL);
+	auto  iResult = WSAIoctl(fd, SIO_GET_EXTENSION_FUNCTION_POINTER,&GuidAcceptEx, sizeof(GuidAcceptEx),
+		&lpfnAcceptEx, sizeof(lpfnAcceptEx),&dwBytes, NULL, NULL);
 
 	if (iResult==SOCKET_ERROR){
 		
@@ -28,14 +26,15 @@ void AcceptorAsyncStream::open(uintmax_t fd, CompletionHandler* handler, Proacto
 
 void AcceptorAsyncStream::async_read(void* buffer, unsigned long bytes){
 	DWORD transferbytes = 0;
-	uintmax_t accept = socket(AF_INET,SOCK_STREAM,0);
+	auto accept = socket(AF_INET,SOCK_STREAM,0);
 	unsigned long blocking = 1;
 	ioctlsocket(accept, FIONBIO, &blocking);
+
 	OVERLAPPED* overlapped = new AsyncStreamAcceptResult(completionHandler_);
-	bool ret= lpfnAcceptEx(fd_, accept, buffer, 0,
-		sizeof(sockaddr_in) + 16, sizeof(sockaddr_in) + 16, &transferbytes,overlapped);
-	if (ret==false){
-		int errCode = WSAGetLastError();
+	*(uintmax_t*)buffer = accept;
+	const bool ret= lpfnAcceptEx(fd_, accept, buffer_, 0,sizeof(sockaddr_in) + 16, sizeof(sockaddr_in) + 16, &transferbytes,overlapped);
+	if (!ret){
+		const auto errCode = WSAGetLastError();
 		if(errCode!= WSA_IO_PENDING){
 			std::cout << "acceptEx fail!" << std::endl;
 		}

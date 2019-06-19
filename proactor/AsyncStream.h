@@ -15,5 +15,4 @@ private:
 	uintmax_t fd_{INVALID_SOCKET};
 	Proactor*proactor_{nullptr};
 
-
 };

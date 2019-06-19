@@ -17,4 +17,5 @@ private:
 	uintmax_t fd_{0};
 	CompletionHandler* completionHandler_{nullptr};
 	Proactor*proactor_{nullptr};
+	char buffer_[2014]{ 0 };
 };

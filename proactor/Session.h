@@ -1,13 +1,12 @@
 ﻿#pragma once
 #include "CompletionHandler.h"
-#include "Proactor.h"
 #include "AsyncStream.h"
-#include <MSWSock.h>
-class Acceptor:public CompletionHandler
+#include "AsyncStreamReadResult.h"
+class Session:public CompletionHandler
 {
 public:
-	Acceptor(Proactor*proactor);
-	virtual ~Acceptor();
+	Session(uintmax_t fd,Proactor*proactor);
+	virtual ~Session();
 
 
 	void handle_read(uintmax_t fd, const AsyncResult& result) override;
@@ -15,10 +14,9 @@ public:
 	void handle_accept(uintmax_t fd, const AsyncResult& result) override;
 	uintmax_t get_handle() override;
 
-	void setup();
 private:
-	SOCKET accept_{0};
+	uintmax_t fd_{0};
 	AsyncStreamBase* asyncStream_{nullptr};
-	char buffer[1024]{0};
-	uintmax_t clientfd_{};
+	char buffer_[1024]{ 0 };
+
 };
