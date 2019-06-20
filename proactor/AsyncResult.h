@@ -10,13 +10,13 @@ public:
 
 	virtual void complete() = 0;
 	void bytesTransferred(unsigned long);
-	unsigned long bytesTransferred();
+	unsigned long bytesTransferred() const;
 
-	bool statue();
+	bool statue() const;
 	void statue(bool statue);
 
 	void error(unsigned long);
-	unsigned long error();
+	unsigned long error() const;
 private:
 	bool statue_;
 	unsigned long error_;

@@ -11,11 +11,11 @@ void AsyncResult::bytesTransferred(unsigned long bytes){
 	this->bytesTransferred_ = bytes;
 }
 
-unsigned long AsyncResult::bytesTransferred(){
+unsigned long AsyncResult::bytesTransferred() const{
 	return this->bytesTransferred_;
 }
 
-bool AsyncResult::statue(){
+bool AsyncResult::statue() const{
 	return this->statue_;
 }
 
@@ -27,7 +27,7 @@ void AsyncResult::error(unsigned long error){
 	this->error_ = error;
 }
 
-unsigned long AsyncResult::error(){
+unsigned long AsyncResult::error() const{
 
 	return this->error_;
 }

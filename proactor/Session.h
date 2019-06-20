@@ -18,5 +18,5 @@ private:
 	uintmax_t fd_{0};
 	AsyncStreamBase* asyncStream_{nullptr};
 	char buffer_[1024]{ 0 };
-
+	uintmax_t totalReadBytes_{};
 };

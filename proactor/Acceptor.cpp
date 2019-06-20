@@ -50,7 +50,7 @@ void Acceptor::setup(){
 	service.sin_addr.s_addr = inet_addr("127.0.0.1");
 	service.sin_port = htons(27015);
 
-	if (bind(accept_, (SOCKADDR *)& service, sizeof(service)) == SOCKET_ERROR) {
+	if (bind(accept_, reinterpret_cast<sockaddr *>(& service), sizeof(service)) == SOCKET_ERROR) {
 		closesocket(accept_);
 		WSACleanup();
 	}

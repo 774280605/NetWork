@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 #include "Session.h"
 #include <iostream>
-
+#include "AsyncResult.h"
 Session::Session(uintmax_t fd, Proactor* proactor):CompletionHandler(proactor),fd_(fd){
 	asyncStream_ = new AsyncStream();
 	asyncStream_->open(fd, this, proactor);
@@ -9,14 +9,19 @@ Session::Session(uintmax_t fd, Proactor* proactor):CompletionHandler(proactor),f
 }
 
 Session::~Session(){
+
 }
 
 void Session::handle_read(uintmax_t fd, const AsyncResult& result){
-	std::cout << buffer_ << std::endl;
 
+	if (result.statue()){
+		this->totalReadBytes_ += result.bytesTransferred();
+	}
+	std::cout << buffer_ << std::endl;
 }
 
 void Session::handle_write(uintmax_t fd, const AsyncResult& result){
+	
 }
 
 void Session::handle_accept(uintmax_t fd, const AsyncResult& result){
