@@ -3,6 +3,7 @@
 #include "Proactor.h"
 #include "AsyncStream.h"
 #include <MSWSock.h>
+#include "ServicesManager.h"
 class Acceptor:public CompletionHandler
 {
 public:

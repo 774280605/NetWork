@@ -39,4 +39,6 @@ void Proactor::handle_events(){
 
 	asyncResult->complete();
 
+	delete asyncResult;
+
 }

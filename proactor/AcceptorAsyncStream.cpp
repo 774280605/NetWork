@@ -47,4 +47,5 @@ void AcceptorAsyncStream::async_read(void* buffer, unsigned long bytes){
 }
 
 void AcceptorAsyncStream::async_write(void* buffer, unsigned long bytes){
+
 }
