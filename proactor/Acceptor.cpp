@@ -19,6 +19,7 @@ void Acceptor::handle_write(uintmax_t fd, const AsyncResult& result){
 void Acceptor::handle_accept(uintmax_t fd, const AsyncResult& result){
 	auto session = new Session(clientfd_, proactor_);
 	asyncStream_->async_read(&clientfd_, sizeof(uintmax_t));
+	servicesManager_.add(session);
 }
 
 uintmax_t Acceptor::get_handle(){

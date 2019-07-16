@@ -22,4 +22,5 @@ private:
 	AsyncStreamBase* asyncStream_{nullptr};
 	char buffer[1024]{0};
 	uintmax_t clientfd_{};
+	ServicesManager servicesManager_;
 };

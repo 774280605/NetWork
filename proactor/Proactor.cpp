@@ -25,7 +25,7 @@ void Proactor::handle_events(){
 	DWORD transferBytes = 0;
 	uintmax_t completionKey;
 	OVERLAPPED*overlapped;
-	bool statue= GetQueuedCompletionStatus(completionPort_, &transferBytes, &completionKey, &overlapped, INFINITE);
+	bool statue= GetQueuedCompletionStatus(completionPort_, &transferBytes, (PULONG_PTR)&completionKey, &overlapped, INFINITE);
 
 	AsyncResult* asyncResult = static_cast<AsyncResult*>(overlapped);
 
