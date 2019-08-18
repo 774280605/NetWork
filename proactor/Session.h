@@ -3,6 +3,7 @@
 #include "AsyncStream.h"
 #include "AsyncStreamReadResult.h"
 #include "MessageBlock.h"
+#include "DataBlock.h"
 class Session:public CompletionHandler
 {
 public:
@@ -21,5 +22,7 @@ private:
 	char buffer_[1024]{ 0 };
 	uintmax_t totalReadBytes_{};
 	MessageBlock block_;
+	DataBlock reader_;
+	DataBlock writer_;
 
 };

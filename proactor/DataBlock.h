@@ -17,6 +17,7 @@ public:
 	void next(DataBlock*block);
 	long space()const;
 	long duplicate(char*buffer, long len) const;
+	int resize(long len);
 private:
 	int blockExpand(long len);
 	void blockAlign();

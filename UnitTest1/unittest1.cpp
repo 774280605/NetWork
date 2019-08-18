@@ -3,6 +3,8 @@
 #include "../proactor/MessageBlock.h"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
+#define message "#AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA#"
+
 namespace UnitTest1
 {		
 	TEST_CLASS(UnitTest1)
@@ -44,6 +46,13 @@ namespace UnitTest1
 
 
 
+		}
+		TEST_METHOD(Test_Resize){
+			MessageBlock block;
+
+			block.add("zhangxiaofei", 12);
+			block.resize(100);
+			block.add(message, strlen(message));
 		}
 
 	};

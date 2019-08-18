@@ -67,6 +67,10 @@ long DataBlock::duplicate(char* buffer, const long len) const{
 	return (need);
 }
 
+int DataBlock::resize(long len){
+	return blockExpand(len);
+}
+
 #define		MAX_BUFFER_LEN 4096
 int DataBlock::blockExpand(long len){
 	int need = misalign_ + off_ + len;

@@ -13,7 +13,8 @@ int MessageBlock::add(char* data, long len){
 	if (last_==nullptr){
 		auto tmpBlock = new DataBlock();
 		tmpBlock->add(data, len);
-		first_ = last_ = tmpBlock;
+		last_with_data_= first_ = last_ = tmpBlock;
+
 	}
 	else{
 		auto tmpBlock = last_;
@@ -27,7 +28,7 @@ int MessageBlock::add(char* data, long len){
 			newBuffer->add(data, len);
 			tmpBlock->next(newBuffer);
 			last_ = newBuffer;
-			
+			last_with_data_ = newBuffer;
 		}else{
 			last_->add(data, len);
 		}		
@@ -76,6 +77,22 @@ int MessageBlock::write_n(uintmax_t fd, long len){
 
 long MessageBlock::length()const{
 	return totalLen_;
+}
+
+int MessageBlock::resize(long len){
+	if (last_==nullptr){
+		auto tmpBlock = new DataBlock();
+		tmpBlock->resize(len);
+		first_ = last_ = tmpBlock;
+	}
+	else{
+		auto tmpBlock = new DataBlock();
+		tmpBlock->resize(len);
+		last_->next(tmpBlock);
+		last_ = tmpBlock;
+
+	}
+	return 0;
 }
 
 void MessageBlock::freeBlock(){
